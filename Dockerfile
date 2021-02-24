@@ -26,9 +26,7 @@ COPY ./srcs/nginx.conf /etc/nginx/sites-available/localhost
 RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/nginx.conf
 RUN rm var/www/html/index.nginx-debian.html
 
-# main-page
-# COPY ./srcs/index.html /var/www/html
-
+# autoindex
 COPY ./srcs/autoindex_off.sh /var/www/html
 COPY ./srcs/nginx-autoindex-off.conf /var/www/html
 
